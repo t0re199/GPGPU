@@ -1,0 +1,69 @@
+COMPUTATIONAL PERFORMANCES
+
+    CPU
+        Experiment 0:
+            min 17.16s
+
+
+    GPU 
+        STD
+            Experiment 8s: STD 8x8
+                22.907ms
+
+            Experiment 16s: STD 16x16
+                18.374ms
+
+            Experiment 32s: STD 32x32:
+                22.824ms
+
+        TILED
+            Experiment 8t: TILED 8x8
+                10.608ms
+
+            Experiment 16t: TILED 16x16
+                10.974ms
+
+            Experiment 32t: TILED 32x32:
+                15.394ms
+
+
+
+MEMORY PERFORMANCES
+
+    STD
+        [user29@JPDM2 cuda]$ nvprof --kernels cudaStdMatMul --metrics gld_transactions ./Final -g
+        ==209599== NVPROF is profiling process 209599, command: ./Final -g
+        [*] gridDim(32, 32)
+        [*] blockDim(8, 8)
+        ==209599== Some kernel(s) will be replayed on device 0 in order to collect all events/metrics.
+        Replaying kernel "cudaStdMatMult(float*, float*, float*, int, int, int, int, int, int)" (done)
+        1000.00	1000.00n1000.00t1000.00	1000.00	1000.00	1000.00	1000.00	1000.00	1000.00
+        ==209599== Profiling application: ./Final -g
+        ==209599== Profiling result:
+        ==209599== Metric result:
+        Invocations                               Metric Name                        Metric Description         Min         Max         Avg
+        Device "NVIDIA GeForce GTX 980 (0)"
+            Kernel: cudaStdMatMult(float*, float*, float*, int, int, int, int, int, int)
+                1                          gld_transactions                  Global Load Transactions  2000000002  2000000002  2000000002
+
+
+    TILED
+        [user29@JPDM2 cuda]$ nvprof --kernels cudaTiledMatMul --metrics gld_transactions ./Final -t
+        ==209654== NVPROF is profiling process 209654, command: ./Final -t
+        [*] gridDim(32, 32)
+        [*] blockDim(8, 8)
+        ==209654== Some kernel(s) will be replayed on device 0 in order to collect all events/metrics.
+        Replaying kernel "cudaTiledMatMul(float*, float*, float*, int, int, int, int, int, int)" (done)
+        1000.00	1000.00n1000.00t1000.00	1000.00	1000.00	1000.00	1000.00	1000.00	1000.00
+        ==209654== Profiling application: ./Final -t
+        ==209654== Profiling result:
+        ==209654== Metric result:
+        Invocations                               Metric Name                        Metric Description         Min         Max         Avg
+        Device "NVIDIA GeForce GTX 980 (0)"
+            Kernel: cudaTiledMatMul(float*, float*, float*, int, int, int, int, int, int)
+                1                          gld_transactions                  Global Load Transactions   276000002   276000002   276000002
+
+
+
+    DIFFERENCE
+        2000000002 - 276000002 = 1724000000 more accesses in the non shared memory version

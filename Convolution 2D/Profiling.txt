@@ -1,0 +1,29 @@
+COMPUTATIONAL PERFORMANCES
+
+    CPU
+        Experiment 0:
+            min 26.620ms
+
+
+    GPU 
+        STD
+            Experiment 8s: STD 8x8
+                37.568us
+
+            Experiment 16s: STD 16x16
+                28.736us
+
+            Experiment 32s: STD 32x32:
+                27.072us
+
+
+        TILED
+            Experiment 8t: TILED 8x8
+                24.480us
+
+            Experiment 16t: TILED 16x16
+                16.993us
+
+            Experiment 32t: TILED 32x32:
+                20.128us
+

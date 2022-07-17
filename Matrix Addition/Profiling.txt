@@ -1,0 +1,323 @@
+tcmalloc: large alloc 2147483648 bytes == 0x55f7b5ec2000 @  0x7fa527b6c1e7 0x55f7b500532a 0x55f7b5005fcb 0x7fa5267ffbf7 0x55f7b5004f4a
+==17080== NVPROF is profiling process 17080, command: ./MatixAddition -m -s 8
+gridDim(512, 8192)
+3.00	3.00	3.00	3.00	3.00	3.00	3.00	3.00	3.00	3.00	
+==17080== Profiling application: ./MatixAddition -m -s 8
+==17080== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:   58.71%  1.33499s         1  1.33499s  1.33499s  1.33499s  [CUDA memcpy DtoH]
+                   39.27%  892.91ms         1  892.91ms  892.91ms  892.91ms  cudaMonoliticAddMatrix(double*, double*, double*, int, int)
+                    2.03%  46.131ms         3  15.377ms  15.373ms  15.384ms  cudaFill(double*, double, int)
+      API calls:   44.21%  1.33610s         1  1.33610s  1.33610s  1.33610s  cudaMemcpy
+                   31.07%  939.05ms         1  939.05ms  939.05ms  939.05ms  cudaDeviceSynchronize
+                   18.07%  546.18ms         3  182.06ms  2.0555ms  272.10ms  cudaFree
+                    6.62%  200.17ms         3  66.725ms  2.5847ms  194.87ms  cudaMalloc
+                    0.02%  465.53us         1  465.53us  465.53us  465.53us  cuDeviceTotalMem
+                    0.01%  172.64us        96  1.7980us     120ns  72.716us  cuDeviceGetAttribute
+                    0.01%  172.31us         4  43.076us  5.4140us  144.29us  cudaLaunchKernel
+                    0.00%  23.852us         1  23.852us  23.852us  23.852us  cuDeviceGetName
+                    0.00%  5.6890us         1  5.6890us  5.6890us  5.6890us  cuDeviceGetPCIBusId
+                    0.00%  1.6920us         3     564ns     130ns     900ns  cuDeviceGetCount
+                    0.00%  1.3300us         2     665ns     210ns  1.1200us  cuDeviceGet
+
+                    => 892.91 + 46.131 + 1.33610 * 1000 = 2275.141
+                    => 892.91 + 46.131 = 939.0409999999999
+
+
+tcmalloc: large alloc 2147483648 bytes == 0x558f1dad2000 @  0x7fb442e401e7 0x558f1c8e032a 0x558f1c8e0fcb 0x7fb441ad3bf7 0x558f1c8dff4a
+==17099== NVPROF is profiling process 17099, command: ./MatixAddition -m -s 16
+gridDim(256, 4096)
+3.00	3.00	3.00	3.00	3.00	3.00	3.00	3.00	3.00	3.00	
+==17099== Profiling application: ./MatixAddition -m -s 16
+==17099== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:   64.40%  1.34611s         1  1.34611s  1.34611s  1.34611s  [CUDA memcpy DtoH]
+                   33.39%  697.95ms         1  697.95ms  697.95ms  697.95ms  cudaMonoliticAddMatrix(double*, double*, double*, int, int)
+                    2.21%  46.128ms         3  15.376ms  15.368ms  15.384ms  cudaFill(double*, double, int)
+      API calls:   47.37%  1.34734s         1  1.34734s  1.34734s  1.34734s  cudaMemcpy
+                   26.16%  744.06ms         1  744.06ms  744.06ms  744.06ms  cudaDeviceSynchronize
+                   19.21%  546.31ms         3  182.10ms  2.1882ms  272.15ms  cudaFree
+                    7.22%  205.26ms         3  68.421ms  2.9850ms  199.14ms  cudaMalloc
+                    0.02%  622.60us         1  622.60us  622.60us  622.60us  cuDeviceTotalMem
+                    0.01%  222.74us        96  2.3200us     119ns  101.36us  cuDeviceGetAttribute
+                    0.01%  199.35us         4  49.836us  5.6740us  169.55us  cudaLaunchKernel
+                    0.00%  41.101us         1  41.101us  41.101us  41.101us  cuDeviceGetName
+                    0.00%  8.4560us         1  8.4560us  8.4560us  8.4560us  cuDeviceGetPCIBusId
+                    0.00%  2.0240us         3     674ns     115ns     970ns  cuDeviceGetCount
+                    0.00%  1.7010us         2     850ns     383ns  1.3180us  cuDeviceGet
+
+                  => 697.95 + 46.128 + 1.34734 * 1000 = 2091.418
+                  => 697.95 + 46.128 = 744.0780000000001
+
+
+tcmalloc: large alloc 2147483648 bytes == 0x5583d3092000 @  0x7fb5b7bde1e7 0x5583d15e832a 0x5583d15e8fcb 0x7fb5b6871bf7 0x5583d15e7f4a
+==17116== NVPROF is profiling process 17116, command: ./MatixAddition -m -s 32
+gridDim(128, 2048)
+3.00	3.00	3.00	3.00	3.00	3.00	3.00	3.00	3.00	3.00	
+==17116== Profiling application: ./MatixAddition -m -s 32
+==17116== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:   71.58%  1.32970s         1  1.32970s  1.32970s  1.32970s  [CUDA memcpy DtoH]
+                   25.94%  481.87ms         1  481.87ms  481.87ms  481.87ms  cudaMonoliticAddMatrix(double*, double*, double*, int, int)
+                    2.48%  46.133ms         3  15.378ms  15.372ms  15.385ms  cudaFill(double*, double, int)
+      API calls:   50.90%  1.33088s         1  1.33088s  1.33088s  1.33088s  cudaMemcpy
+                   20.90%  546.48ms         3  182.16ms  2.2554ms  272.45ms  cudaFree
+                   20.19%  527.91ms         1  527.91ms  527.91ms  527.91ms  cudaDeviceSynchronize
+                    7.96%  208.02ms         3  69.340ms  2.9052ms  202.11ms  cudaMalloc
+                    0.02%  623.55us         1  623.55us  623.55us  623.55us  cuDeviceTotalMem
+                    0.01%  317.98us         4  79.495us  6.3340us  251.51us  cudaLaunchKernel
+                    0.01%  263.87us        96  2.7480us     118ns  138.51us  cuDeviceGetAttribute
+                    0.00%  30.441us         1  30.441us  30.441us  30.441us  cuDeviceGetName
+                    0.00%  6.6630us         1  6.6630us  6.6630us  6.6630us  cuDeviceGetPCIBusId
+                    0.00%  2.1390us         3     713ns     143ns  1.0390us  cuDeviceGetCount
+                    0.00%  1.8080us         2     904ns     396ns  1.4120us  cuDeviceGet
+
+                  => 481.87 + 46.133 + 1.33088 * 1000 = 1858.8830000000003
+                  => 481.87 + 46.133 = 528.003
+
+
+==17131== NVPROF is profiling process 17131, command: ./MatixAddition -m -u 8
+gridDIm(512, 8192)
+3.00	3.00	3.00	3.00	3.00	3.00	3.00	3.00	3.00	3.00	
+==17131== Profiling application: ./MatixAddition -m -u 8
+==17131== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:   95.09%  893.66ms         1  893.66ms  893.66ms  893.66ms  cudaMonoliticAddMatrix(double*, double*, double*, int, int)
+                    4.91%  46.163ms         3  15.388ms  15.384ms  15.391ms  cudaFill(double*, double, int)
+      API calls:   38.71%  1.19287s         3  397.62ms  326.03ms  540.62ms  cudaMallocManaged
+                   30.69%  945.54ms         3  315.18ms  302.70ms  339.83ms  cudaFree
+                   30.50%  939.76ms         1  939.76ms  939.76ms  939.76ms  cudaDeviceSynchronize
+                    0.07%  2.2494ms         4  562.35us  5.9610us  2.1928ms  cudaLaunchKernel
+                    0.02%  550.99us         1  550.99us  550.99us  550.99us  cuDeviceTotalMem
+                    0.01%  181.73us        96  1.8930us     125ns  77.671us  cuDeviceGetAttribute
+                    0.00%  26.598us         1  26.598us  26.598us  26.598us  cuDeviceGetName
+                    0.00%  7.5540us         1  7.5540us  7.5540us  7.5540us  cuDeviceGetPCIBusId
+                    0.00%  1.9150us         3     638ns     174ns  1.0610us  cuDeviceGetCount
+                    0.00%  1.2780us         2     639ns     222ns  1.0560us  cuDeviceGet
+
+==17131== Unified Memory profiling result:
+Device "Tesla K80 (0)"
+   Count  Avg Size  Min Size  Max Size  Total Size  Total Time  Name
+   12292  170.61KB  4.0000KB  0.9961MB  2.000000GB  318.6014ms  Device To Host
+Total CPU Page faults: 6146
+
+                  => 893.66 + 46.163 = 939.823
+            
+
+==17146== NVPROF is profiling process 17146, command: ./MatixAddition -m -u 16
+gridDIm(256, 4096)
+3.00	3.00	3.00	3.00	3.00	3.00	3.00	3.00	3.00	3.00	
+==17146== Profiling application: ./MatixAddition -m -u 16
+==17146== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:   93.81%  699.37ms         1  699.37ms  699.37ms  699.37ms  cudaMonoliticAddMatrix(double*, double*, double*, int, int)
+                    6.19%  46.167ms         3  15.389ms  15.384ms  15.394ms  cudaFill(double*, double, int)
+      API calls:   41.40%  1.19524s         3  398.41ms  326.03ms  543.17ms  cudaMallocManaged
+                   32.68%  943.54ms         3  314.51ms  301.75ms  339.14ms  cudaFree
+                   25.82%  745.51ms         1  745.51ms  745.51ms  745.51ms  cudaDeviceSynchronize
+                    0.07%  2.0560ms         4  514.00us  6.1290us  2.0038ms  cudaLaunchKernel
+                    0.02%  475.90us         1  475.90us  475.90us  475.90us  cuDeviceTotalMem
+                    0.01%  191.12us        96  1.9900us     122ns  83.475us  cuDeviceGetAttribute
+                    0.00%  38.956us         1  38.956us  38.956us  38.956us  cuDeviceGetName
+                    0.00%  6.8900us         1  6.8900us  6.8900us  6.8900us  cuDeviceGetPCIBusId
+                    0.00%  1.7190us         3     573ns     149ns     927ns  cuDeviceGetCount
+                    0.00%  1.4370us         2     718ns     258ns  1.1790us  cuDeviceGet
+
+==17146== Unified Memory profiling result:
+Device "Tesla K80 (0)"
+   Count  Avg Size  Min Size  Max Size  Total Size  Total Time  Name
+   12292  170.61KB  4.0000KB  0.9961MB  2.000000GB  318.8274ms  Device To Host
+Total CPU Page faults: 6146
+
+                  => 699.37 + 46.167 = 745.537
+
+
+==17161== NVPROF is profiling process 17161, command: ./MatixAddition -m -u 32
+gridDIm(128, 2048)
+3.00	3.00	3.00	3.00	3.00	3.00	3.00	3.00	3.00	3.00	
+==17161== Profiling application: ./MatixAddition -m -u 32
+==17161== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:   91.26%  482.05ms         1  482.05ms  482.05ms  482.05ms  cudaMonoliticAddMatrix(double*, double*, double*, int, int)
+                    8.74%  46.158ms         3  15.386ms  15.381ms  15.393ms  cudaFill(double*, double, int)
+      API calls:   44.70%  1.19642s         3  398.81ms  325.74ms  544.33ms  cudaMallocManaged
+                   35.44%  948.62ms         3  316.21ms  302.73ms  339.42ms  cudaFree
+                   19.74%  528.20ms         1  528.20ms  528.20ms  528.20ms  cudaDeviceSynchronize
+                    0.09%  2.3392ms         4  584.81us  6.1030us  2.2880ms  cudaLaunchKernel
+                    0.02%  506.13us         1  506.13us  506.13us  506.13us  cuDeviceTotalMem
+                    0.01%  216.80us        96  2.2580us     120ns  98.898us  cuDeviceGetAttribute
+                    0.00%  33.177us         1  33.177us  33.177us  33.177us  cuDeviceGetName
+                    0.00%  6.5910us         1  6.5910us  6.5910us  6.5910us  cuDeviceGetPCIBusId
+                    0.00%  2.1360us         3     712ns     151ns  1.0100us  cuDeviceGetCount
+                    0.00%  1.5650us         2     782ns     330ns  1.2350us  cuDeviceGet
+
+==17161== Unified Memory profiling result:
+Device "Tesla K80 (0)"
+   Count  Avg Size  Min Size  Max Size  Total Size  Total Time  Name
+   12292  170.61KB  4.0000KB  0.9961MB  2.000000GB  318.6115ms  Device To Host
+Total CPU Page faults: 6146
+
+                  => 482.05 + 46.158 = 528.208
+
+
+
+tcmalloc: large alloc 2147483648 bytes == 0x55cb46604000 @  0x7f46422451e7 0x55cb4400a942 0x55cb4400afcb 0x7f4640ed8bf7 0x55cb44009f4a
+==17178== NVPROF is profiling process 17178, command: ./MatixAddition -g -s 8
+gridDIm(32, 32)
+3.00	3.00	3.00	3.00	3.00	3.00	3.00	3.00	3.00	3.00	
+==17178== Profiling application: ./MatixAddition -g -s 8
+==17178== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:   86.10%  1.34048s         1  1.34048s  1.34048s  1.34048s  [CUDA memcpy DtoH]
+                   10.93%  170.23ms         1  170.23ms  170.23ms  170.23ms  cudaGridStrideLoopAddMatrix(double*, double*, double*, int, int)
+                    2.96%  46.135ms         3  15.378ms  15.375ms  15.380ms  cudaFill(double*, double, int)
+      API calls:   57.89%  1.34156s         1  1.34156s  1.34156s  1.34156s  cudaMemcpy
+                   23.56%  545.97ms         3  181.99ms  1.9761ms  272.05ms  cudaFree
+                    9.34%  216.35ms         1  216.35ms  216.35ms  216.35ms  cudaDeviceSynchronize
+                    9.17%  212.44ms         3  70.812ms  3.1789ms  205.70ms  cudaMalloc
+                    0.03%  633.57us         1  633.57us  633.57us  633.57us  cuDeviceTotalMem
+                    0.01%  255.05us         4  63.761us  5.4840us  226.10us  cudaLaunchKernel
+                    0.01%  210.86us        96  2.1960us     115ns  105.76us  cuDeviceGetAttribute
+                    0.00%  36.816us         1  36.816us  36.816us  36.816us  cuDeviceGetName
+                    0.00%  5.4450us         1  5.4450us  5.4450us  5.4450us  cuDeviceGetPCIBusId
+                    0.00%  1.7710us         3     590ns     121ns     902ns  cuDeviceGetCount
+                    0.00%  1.3230us         2     661ns     243ns  1.0800us  cuDeviceGet
+
+                  => 170.23 + 46.135 + 1.34156 * 1000 = 1557.9250000000002
+                  => 170.23 + 46.135 = 216.36499999999998
+
+
+tcmalloc: large alloc 2147483648 bytes == 0x55fd2f512000 @  0x7f11d0e8f1e7 0x55fd2dd00942 0x55fd2dd00fcb 0x7f11cfb22bf7 0x55fd2dcfff4a
+==17193== NVPROF is profiling process 17193, command: ./MatixAddition -g -s 16
+gridDIm(32, 32)
+3.00	3.00	3.00	3.00	3.00	3.00	3.00	3.00	3.00	3.00	
+==17193== Profiling application: ./MatixAddition -g -s 16
+==17193== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:   72.51%  1.33802s         1  1.33802s  1.33802s  1.33802s  [CUDA memcpy DtoH]
+                   24.99%  461.23ms         1  461.23ms  461.23ms  461.23ms  cudaGridStrideLoopAddMatrix(double*, double*, double*, int, int)
+                    2.50%  46.139ms         3  15.380ms  15.377ms  15.383ms  cudaFill(double*, double, int)
+      API calls:   51.41%  1.33923s         1  1.33923s  1.33923s  1.33923s  cudaMemcpy
+                   20.96%  546.10ms         3  182.03ms  2.0111ms  272.17ms  cudaFree
+                   19.48%  507.33ms         1  507.33ms  507.33ms  507.33ms  cudaDeviceSynchronize
+                    8.11%  211.21ms         3  70.404ms  4.8169ms  201.40ms  cudaMalloc
+                    0.02%  503.32us         1  503.32us  503.32us  503.32us  cuDeviceTotalMem
+                    0.01%  303.02us         4  75.756us  11.099us  255.03us  cudaLaunchKernel
+                    0.01%  204.25us        96  2.1270us     131ns  88.135us  cuDeviceGetAttribute
+                    0.00%  26.470us         1  26.470us  26.470us  26.470us  cuDeviceGetName
+                    0.00%  6.8500us         1  6.8500us  6.8500us  6.8500us  cuDeviceGetPCIBusId
+                    0.00%  2.1580us         3     719ns     195ns  1.0780us  cuDeviceGetCount
+                    0.00%  1.7340us         2     867ns     320ns  1.4140us  cuDeviceGet
+
+                  => 461.23 + 46.139 + 1.33923 * 1000 = 1846.5990000000002
+                  => 461.23 + 46.139 = 507.369
+
+
+tcmalloc: large alloc 2147483648 bytes == 0x558ef16b6000 @  0x7fe477b1d1e7 0x558eef205942 0x558eef205fcb 0x7fe4767b0bf7 0x558eef204f4a
+==17208== NVPROF is profiling process 17208, command: ./MatixAddition -g -s 32
+gridDIm(32, 32)
+3.00	3.00	3.00	3.00	3.00	3.00	3.00	3.00	3.00	3.00	
+==17208== Profiling application: ./MatixAddition -g -s 32
+==17208== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:   62.34%  1.33640s         1  1.33640s  1.33640s  1.33640s  [CUDA memcpy DtoH]
+                   35.51%  761.31ms         1  761.31ms  761.31ms  761.31ms  cudaGridStrideLoopAddMatrix(double*, double*, double*, int, int)
+                    2.15%  46.157ms         3  15.386ms  15.375ms  15.392ms  cudaFill(double*, double, int)
+      API calls:   46.25%  1.33757s         1  1.33757s  1.33757s  1.33757s  cudaMemcpy
+                   27.92%  807.45ms         1  807.45ms  807.45ms  807.45ms  cudaDeviceSynchronize
+                   18.89%  546.15ms         3  182.05ms  2.0103ms  272.16ms  cudaFree
+                    6.90%  199.56ms         3  66.520ms  3.0376ms  193.25ms  cudaMalloc
+                    0.02%  634.71us         1  634.71us  634.71us  634.71us  cuDeviceTotalMem
+                    0.01%  270.06us        96  2.8130us     104ns  109.25us  cuDeviceGetAttribute
+                    0.01%  189.19us         4  47.296us  5.9990us  156.13us  cudaLaunchKernel
+                    0.00%  36.959us         1  36.959us  36.959us  36.959us  cuDeviceGetName
+                    0.00%  5.5020us         1  5.5020us  5.5020us  5.5020us  cuDeviceGetPCIBusId
+                    0.00%  2.6170us         3     872ns     120ns  1.5990us  cuDeviceGetCount
+                    0.00%  1.5170us         2     758ns     379ns  1.1380us  cuDeviceGet
+
+                  => 761.31 + 46.157 + 1.33757 * 1000 = 2145.037
+                  => 761.31 + 46.157 = 807.467
+
+
+==17229== NVPROF is profiling process 17229, command: ./MatixAddition -g -u 8
+gridDIm(32, 32)
+3.00	3.00	3.00	3.00	3.00	3.00	3.00	3.00	3.00	3.00	
+==17229== Profiling application: ./MatixAddition -g -u 8
+==17229== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:   78.68%  170.35ms         1  170.35ms  170.35ms  170.35ms  cudaGridStrideLoopAddMatrix(double*, double*, double*, int, int)
+                   21.32%  46.171ms         3  15.390ms  15.386ms  15.393ms  cudaFill(double*, double, int)
+      API calls:   50.62%  1.19184s         3  397.28ms  325.94ms  539.48ms  cudaMallocManaged
+                   40.06%  943.29ms         3  314.43ms  302.14ms  338.33ms  cudaFree
+                    9.19%  216.48ms         1  216.48ms  216.48ms  216.48ms  cudaDeviceSynchronize
+                    0.09%  2.0204ms         4  505.10us  5.8460us  1.9682ms  cudaLaunchKernel
+                    0.02%  582.04us         1  582.04us  582.04us  582.04us  cuDeviceTotalMem
+                    0.01%  219.12us        96  2.2820us     116ns  106.52us  cuDeviceGetAttribute
+                    0.00%  45.318us         1  45.318us  45.318us  45.318us  cuDeviceGetName
+                    0.00%  8.3010us         1  8.3010us  8.3010us  8.3010us  cuDeviceGetPCIBusId
+                    0.00%  1.6310us         3     543ns     123ns     974ns  cuDeviceGetCount
+                    0.00%  1.1690us         2     584ns     206ns     963ns  cuDeviceGet
+
+==17229== Unified Memory profiling result:
+Device "Tesla K80 (0)"
+   Count  Avg Size  Min Size  Max Size  Total Size  Total Time  Name
+   12292  170.61KB  4.0000KB  0.9961MB  2.000000GB  318.6372ms  Device To Host
+Total CPU Page faults: 6146
+
+                  => 170.35 + 46.171 = 216.521
+
+
+==17244== NVPROF is profiling process 17244, command: ./MatixAddition -g -u 16
+gridDIm(32, 32)
+3.00	3.00	3.00	3.00	3.00	3.00	3.00	3.00	3.00	3.00	
+==17244== Profiling application: ./MatixAddition -g -u 16
+==17244== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:   90.90%  461.11ms         1  461.11ms  461.11ms  461.11ms  cudaGridStrideLoopAddMatrix(double*, double*, double*, int, int)
+                    9.10%  46.169ms         3  15.390ms  15.382ms  15.396ms  cudaFill(double*, double, int)
+      API calls:   45.19%  1.19699s         3  399.00ms  325.73ms  545.27ms  cudaMallocManaged
+                   35.55%  941.73ms         3  313.91ms  301.62ms  337.55ms  cudaFree
+                   19.15%  507.27ms         1  507.27ms  507.27ms  507.27ms  cudaDeviceSynchronize
+                    0.08%  2.0288ms         4  507.19us  5.4170us  1.9941ms  cudaLaunchKernel
+                    0.02%  461.74us         1  461.74us  461.74us  461.74us  cuDeviceTotalMem
+                    0.01%  190.60us        96  1.9850us     124ns  85.451us  cuDeviceGetAttribute
+                    0.00%  55.654us         1  55.654us  55.654us  55.654us  cuDeviceGetName
+                    0.00%  6.4180us         1  6.4180us  6.4180us  6.4180us  cuDeviceGetPCIBusId
+                    0.00%  1.9150us         3     638ns     127ns  1.0410us  cuDeviceGetCount
+                    0.00%  1.4080us         2     704ns     210ns  1.1980us  cuDeviceGet
+
+==17244== Unified Memory profiling result:
+Device "Tesla K80 (0)"
+   Count  Avg Size  Min Size  Max Size  Total Size  Total Time  Name
+   12292  170.61KB  4.0000KB  0.9961MB  2.000000GB  318.2755ms  Device To Host
+Total CPU Page faults: 6146
+
+                  => 461.11 + 46.169 = 507.279
+
+
+==17259== NVPROF is profiling process 17259, command: ./MatixAddition -g -u 32
+gridDIm(32, 32)
+3.00	3.00	3.00	3.00	3.00	3.00	3.00	3.00	3.00	3.00	
+==17259== Profiling application: ./MatixAddition -g -u 32
+==17259== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:   94.28%  760.45ms         1  760.45ms  760.45ms  760.45ms  cudaGridStrideLoopAddMatrix(double*, double*, double*, int, int)
+                    5.72%  46.161ms         3  15.387ms  15.382ms  15.391ms  cudaFill(double*, double, int)
+      API calls:   40.69%  1.20608s         3  402.03ms  326.16ms  553.51ms  cudaMallocManaged
+                   32.00%  948.55ms         3  316.18ms  302.48ms  342.36ms  cudaFree
+                   27.21%  806.54ms         1  806.54ms  806.54ms  806.54ms  cudaDeviceSynchronize
+                    0.07%  2.2071ms         4  551.77us  6.7090us  2.1561ms  cudaLaunchKernel
+                    0.02%  552.17us         1  552.17us  552.17us  552.17us  cuDeviceTotalMem
+                    0.01%  202.09us        96  2.1050us     119ns  87.958us  cuDeviceGetAttribute
+                    0.00%  63.250us         1  63.250us  63.250us  63.250us  cuDeviceGetName
+                    0.00%  5.7570us         1  5.7570us  5.7570us  5.7570us  cuDeviceGetPCIBusId
+                    0.00%  2.3470us         3     782ns     250ns  1.0870us  cuDeviceGetCount
+                    0.00%  2.0760us         2  1.0380us     296ns  1.7800us  cuDeviceGet
+
+==17259== Unified Memory profiling result:
+Device "Tesla K80 (0)"
+   Count  Avg Size  Min Size  Max Size  Total Size  Total Time  Name
+   12292  170.61KB  4.0000KB  0.9961MB  2.000000GB  318.8727ms  Device To Host
+Total CPU Page faults: 6146
+
+                  => 760.45 + 46.161 = 806.6110000000001
